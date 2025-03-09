@@ -54,7 +54,7 @@ const Home = () => {
           </Link>
 
           <Link
-            to="/lesson/1"
+            to="/lesson/0"
             className="flex items-center gap-2 px-6 py-3 bg-[#8D6E63] dark:bg-[#A1887F] text-white rounded-lg shadow-lg hover:bg-[#795548] dark:hover:bg-[#6D4C41] transition-all duration-300"
           >
             <BookOpen size={24} /> Explore Ethics Lesson
