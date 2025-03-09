@@ -13,7 +13,6 @@ function App() {
         <Route path="/lesson/:steps" element={<Lesson />}/>
         <Route path="/game/" element={<Game />}/>
       </Routes>
-      
     </Router>
     </>
   );

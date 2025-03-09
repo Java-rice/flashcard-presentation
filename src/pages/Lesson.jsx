@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowLeft } from "lucide-react";
-// import ethicsImage from "@src/assets/ethics.jpg";
-// import ethicsVideo from "@src/assets/ethics.mp4";
+import { ArrowRight, ArrowLeft, BookOpen } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
 
 const lessons = [
   {
@@ -33,19 +32,40 @@ const lessons = [
   }
 ];
 
-const Lesson = () => {
-  const [step, setStep] = useState(0);
-
-  const nextStep = () => {
-    if (step < lessons.length - 1) setStep(step + 1);
-  };
-
-  const prevStep = () => {
-    if (step > 0) setStep(step - 1);
-  };
+const LessonSidebar = () => {
+  const { steps } = useParams();
+  const activeStep = parseInt(steps, 10) || 0;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#F5E1C0] dark:bg-[#3E2723] text-[#4E342E] dark:text-[#D7CCC8] p-6">
+    <div className="w-72 bg-[#4E342E] dark:bg-[#3E2723] text-white p-6 min-h-screen flex flex-col">
+      <h2 className="text-2xl font-bold mb-6">Lessons</h2>
+      <ul className="space-y-3 flex-1">
+        {lessons.map((lesson, index) => (
+          <li key={index}>
+            <Link
+              to={`/lesson/${index}`}
+              className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 shadow-md ${
+                activeStep === index
+                  ? "bg-[#8D6E63] text-white font-semibold"
+                  : "bg-[#6D4C41] hover:bg-[#5D4037] text-gray-200"
+              }`}
+            >
+              <BookOpen size={20} />
+              {lesson.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const LessonContent = () => {
+  const { steps } = useParams();
+  const step = parseInt(steps, 10) || 0;
+
+  return (
+    <div className="flex flex-1 flex-col items-center justify-center p-6">
       <motion.h1 
         initial={{ opacity: 0, y: -10 }} 
         animate={{ opacity: 1, y: 0 }}
@@ -54,15 +74,6 @@ const Lesson = () => {
       >
         {lessons[step].title}
       </motion.h1>
-      
-      <motion.img 
-        src="#"
-        alt="Ethics" 
-        className="w-full max-w-md rounded-lg shadow-lg mb-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
-      />
       
       <motion.p 
         initial={{ opacity: 0 }}
@@ -81,25 +92,27 @@ const Lesson = () => {
         ))}
       </ul>
       
-      {step === 0 && (
-        <motion.video 
-          src="#"
-          controls 
-          className="w-full max-w-md rounded-lg shadow-lg my-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
-        />
-      )}
-      
       <div className="flex gap-4 mt-6">
-        <button onClick={prevStep} disabled={step === 0} className="p-3 bg-[#8D6E63] text-white rounded-lg shadow-lg disabled:opacity-50">
-          <ArrowLeft size={24} />
-        </button>
-        <button onClick={nextStep} disabled={step === lessons.length - 1} className="p-3 bg-[#8D6E63] text-white rounded-lg shadow-lg disabled:opacity-50">
-          <ArrowRight size={24} />
-        </button>
+        {step > 0 && (
+          <Link to={`/lesson/${step - 1}`} className="p-3 bg-[#8D6E63] text-white rounded-lg shadow-lg">
+            <ArrowLeft size={24} />
+          </Link>
+        )}
+        {step < lessons.length - 1 && (
+          <Link to={`/lesson/${step + 1}`} className="p-3 bg-[#8D6E63] text-white rounded-lg shadow-lg">
+            <ArrowRight size={24} />
+          </Link>
+        )}
       </div>
+    </div>
+  );
+};
+
+const Lesson = () => {
+  return (
+    <div className="flex min-h-screen bg-[#F5E1C0] dark:bg-[#3E2723] text-[#4E342E] dark:text-[#D7CCC8]">
+      <LessonSidebar />
+      <LessonContent />
     </div>
   );
 };
