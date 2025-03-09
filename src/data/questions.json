@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "type": "multiple-choice",
+    "question": "What is the primary focus of consequentialist theories?",
+    "choices": [
+      "The intention behind actions",
+      "The ethical character of a person",
+      "The results of an action",
+      "Religious teachings"
+    ],
+    "answer": "The results of an action"
+  },
+  {
+    "id": 2,
+    "type": "identification",
+    "question": "Which ethical approach states that an action is right if it benefits the most people?",
+    "answer": "The Utilitarian Approach"
+  },
+  {
+    "id": 3,
+    "type": "multiple-choice",
+    "video": "https://www.example.com/sample-video.mp4",
+    "question": "Watch the video and choose the correct ethical approach applied.",
+    "choices": ["Egoistic", "Common Good", "Virtue", "Rights"],
+    "answer": "Common Good"
+  },
+  {
+    "id": 1,
+    "type": "multiple-choice",
+    "question": "What is the primary focus of consequentialist theories?",
+    "choices": [
+      "The intention behind actions",
+      "The ethical character of a person",
+      "The results of an action",
+      "Religious teachings"
+    ],
+    "answer": "The results of an action"
+  },
+  {
+    "id": 2,
+    "type": "identification",
+    "question": "Which ethical approach states that an action is right if it benefits the most people?",
+    "answer": "The Utilitarian Approach"
+  },
+  {
+    "id": 3,
+    "type": "multiple-choice",
+    "video": "https://www.example.com/sample-video.mp4",
+    "question": "Watch the video and choose the correct ethical approach applied.",
+    "choices": ["Egoistic", "Common Good", "Virtue", "Rights"],
+    "answer": "Common Good"
+  }
+]
