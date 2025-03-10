@@ -2,53 +2,75 @@
   {
     "id": 1,
     "type": "multiple-choice",
-    "question": "What is the primary focus of consequentialist theories?",
+    "question": "Which ethical theory emphasizes duty and rules over consequences?",
     "choices": [
-      "The intention behind actions",
-      "The ethical character of a person",
-      "The results of an action",
-      "Religious teachings"
+      "Utilitarianism",
+      "Deontology",
+      "Virtue Ethics",
+      "Relativism"
     ],
-    "answer": "The results of an action"
+    "answer": "Deontology"
   },
   {
     "id": 2,
-    "type": "identification",
-    "question": "Which ethical approach states that an action is right if it benefits the most people?",
-    "answer": "The Utilitarian Approach"
+    "type": "multiple-choice",
+    "video": "https://www.example.com/sample-video.mp4",
+    "question": "Watch the video and determine which ethical perspective best justifies the action taken.",
+    "choices": [
+      "Utilitarianism",
+      "Ethical Egoism",
+      "Virtue Ethics",
+      "Divine Command Theory"
+    ],
+    "answer": "Utilitarianism"
   },
   {
     "id": 3,
     "type": "multiple-choice",
-    "video": "https://www.example.com/sample-video.mp4",
-    "question": "Watch the video and choose the correct ethical approach applied.",
-    "choices": ["Egoistic", "Common Good", "Virtue", "Rights"],
-    "answer": "Common Good"
-  },
-  {
-    "id": 1,
-    "type": "multiple-choice",
-    "question": "What is the primary focus of consequentialist theories?",
+    "question": "Which ethical theory is based on developing good character traits?",
     "choices": [
-      "The intention behind actions",
-      "The ethical character of a person",
-      "The results of an action",
-      "Religious teachings"
+      "Consequentialism",
+      "Virtue Ethics",
+      "Deontology",
+      "Contractarianism"
     ],
-    "answer": "The results of an action"
+    "answer": "Virtue Ethics"
   },
   {
-    "id": 2,
-    "type": "identification",
-    "question": "Which ethical approach states that an action is right if it benefits the most people?",
-    "answer": "The Utilitarian Approach"
+    "id": 4,
+    "type": "multiple-choice",
+    "question": "Which principle states that an action is right if it benefits the greatest number of people?",
+    "choices": [
+      "Ethical Relativism",
+      "Categorical Imperative",
+      "Utilitarianism",
+      "Divine Command Theory"
+    ],
+    "answer": "Utilitarianism"
   },
   {
-    "id": 3,
+    "id": 5,
     "type": "multiple-choice",
     "video": "https://www.example.com/sample-video.mp4",
-    "question": "Watch the video and choose the correct ethical approach applied.",
-    "choices": ["Egoistic", "Common Good", "Virtue", "Rights"],
-    "answer": "Common Good"
+    "question": "Based on the video, which ethical principle is most clearly demonstrated?",
+    "choices": [
+      "Justice",
+      "Autonomy",
+      "Beneficence",
+      "Nonmaleficence"
+    ],
+    "answer": "Beneficence"
+  },
+  {
+    "id": 6,
+    "type": "multiple-choice",
+    "question": "Which ethical theory suggests that moral values are dependent on cultural or individual beliefs?",
+    "choices": [
+      "Moral Absolutism",
+      "Ethical Relativism",
+      "Utilitarianism",
+      "Natural Law"
+    ],
+    "answer": "Ethical Relativism"
   }
 ]

@@ -1,158 +1,213 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Expand, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
+import { CheckCircle, XCircle, RefreshCw, User, Video } from "lucide-react";
 
-const Flashcard = ({ card, onRemove }) => {
+const Flashcard = ({
+  question,
+  onCorrectAnswer,
+  onWrongAnswer,
+  currentPlayer,
+  players,
+  setCurrentPlayerIndex,
+  onReset,
+}) => {
   const [flipped, setFlipped] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [isCorrect, setIsCorrect] = useState(null); // true = correct, false = incorrect
-  const [showPoint, setShowPoint] = useState(false);
-  const [isVideoFull, setIsVideoFull] = useState(false);
-  const cardRef = useRef(null);
-  const [cardHeight, setCardHeight] = useState("auto");
+  const [isCorrect, setIsCorrect] = useState(null);
+  const [showResult, setShowResult] = useState(false);
+  const [allowSteal, setAllowSteal] = useState(false);
+  const [answeredPlayers, setAnsweredPlayers] = useState([]);
+  const [stealerIndex, setStealerIndex] = useState(null);
 
-  // Adjust card height dynamically
-  useEffect(() => {
-    if (cardRef.current) {
-      setCardHeight(`${cardRef.current.scrollHeight}px`);
-    }
-  }, [flipped, isCorrect]);
+  // Debugging Log
+  console.log("Flashcard received question:", question);
 
-  // Handle answer selection
-  const handleAnswerClick = (choice, event) => {
-    event.stopPropagation(); // Prevents card flip
+  // Prevent error if `question` is missing
+  if (!question || !question.question) {
+    return (
+      <div className="w-full max-w-md p-4 bg-red-200 dark:bg-red-800 rounded-lg text-center">
+        <p className="text-red-800 dark:text-red-200 font-semibold">
+          Error: No question data available.
+        </p>
+      </div>
+    );
+  }
 
-    if (selectedAnswer) return; // Prevent re-selection
+  const handleFlip = () => {
+    setFlipped((prev) => !prev);
+  };
+
+  const handleAnswerClick = (choice) => {
+    if (selectedAnswer !== null || answeredPlayers.includes(currentPlayer.name)) return;
 
     setSelectedAnswer(choice);
-    if (choice === card.answer) {
-      setIsCorrect(true);
-      setShowPoint(true);
+    const correct = choice === question.answer;
+    setIsCorrect(correct);
+    setShowResult(true);
 
-      setTimeout(() => {
-        setShowPoint(false);
-        setTimeout(() => onRemove(card.id), 2000);
-      }, 2000);
+    setAnsweredPlayers((prev) => [...prev, currentPlayer.name]);
+
+    if (correct) {
+      setTimeout(() => onCorrectAnswer(true), 1500);
     } else {
-      setIsCorrect(false);
+      onWrongAnswer();
+      setTimeout(() => setAllowSteal(true), 1500);
     }
   };
 
+  const handleSteal = (index) => {
+    const stealingPlayer = players[index];
+    if (answeredPlayers.includes(stealingPlayer.name)) return;
+
+    setStealerIndex(index);
+    setCurrentPlayerIndex(index);
+    
+    setSelectedAnswer(null);
+    setIsCorrect(null);
+    setShowResult(false);
+    setAllowSteal(false);
+  };
+
+  const handleReset = () => {
+    setFlipped(false);
+    setSelectedAnswer(null);
+    setIsCorrect(null);
+    setShowResult(false);
+    setAllowSteal(false);
+    setAnsweredPlayers([]);
+    setStealerIndex(null);
+    onReset();
+  };
+
   return (
-    <motion.div
-      className="relative bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-200 p-4 rounded-lg shadow-lg cursor-pointer w-72 transition-all duration-500"
-      whileTap={{ scale: 0.95 }}
-      onClick={() => !selectedAnswer && setFlipped(!flipped)}
-      style={{ minHeight: flipped ? cardHeight : "4rem" }}
-      ref={cardRef}
-    >
-      {!flipped ? (
-        <div className="flex items-center justify-center h-16 text-4xl font-bold">?</div>
-      ) : (
-        <div className="flex flex-col gap-3">
-          {/* Video Question */}
-          {card.video && (
-            <div className="relative">
-              <motion.video
-                controls
-                className={`w-full rounded-lg ${isVideoFull ? "h-64" : "h-40"}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                <source src={card.video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </motion.video>
-              <button
-                className="absolute top-2 right-2 bg-gray-700 bg-opacity-70 p-1 rounded-full text-white hover:bg-opacity-100"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsVideoFull(!isVideoFull);
-                }}
-              >
-                <Expand size={20} />
-              </button>
-            </div>
-          )}
+    <div className="w-full max-w-md">
+      {/* Header */}
+      <div className="mb-4 flex justify-between items-center">
+        <div className="text-lg font-bold">
+          Current Player: <span className="text-blue-500">{currentPlayer.name}</span>
+        </div>
+        <button 
+          onClick={handleReset}
+          className="flex items-center gap-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 px-3 py-1 rounded"
+        >
+          <RefreshCw size={16} />
+          <span>New Question</span>
+        </button>
+      </div>
 
-          {/* Question Text */}
-          <h3 className="text-lg font-semibold text-center">{card.question}</h3>
+      {/* Flashcard */}
+      <div className="relative w-full h-96 perspective-1000">
+        {/* Card Front */}
+        {!flipped && (
+          <motion.div 
+            className="absolute w-full h-full bg-[#D7CCC8] dark:bg-[#4E342E] rounded-lg shadow-lg p-6 flex flex-col items-center justify-center cursor-pointer"
+            onClick={handleFlip}
+          >
+            <h3 className="text-xl font-bold text-center mb-4">Click to reveal question</h3>
+            <div className="text-8xl">❓</div>
+          </motion.div>
+        )}
 
-          {/* Multiple Choice Options */}
-          {card.type === "multiple-choice" && (
-            <ul className="space-y-2">
-              {card.choices.map((choice, index) => (
+        {/* Card Back */}
+        {flipped && (
+          <motion.div 
+            className="absolute w-full h-full bg-[#E0B089] dark:bg-[#5D4037] rounded-lg shadow-lg p-6 flex flex-col"
+          >
+            {question.video && (
+              <div className="mb-4 flex items-center justify-center text-blue-500">
+                <Video size={24} className="mr-2" />
+                <span>Video Question</span>
+              </div>
+            )}
+
+            <h3 className="text-xl font-bold text-center mb-6">{question.question}</h3>
+
+            {/* Choices */}
+            <ul className="space-y-3 mt-2 flex-grow">
+              {question.choices?.map((choice, index) => (
                 <motion.li
                   key={index}
-                  className={`p-2 rounded-md text-center cursor-pointer transition-all duration-300 ${
-                    selectedAnswer
-                      ? choice === card.answer
+                  className={`p-3 rounded-md text-center cursor-pointer transition ${
+                    selectedAnswer === choice
+                      ? isCorrect
                         ? "bg-green-500 text-white"
-                        : choice === selectedAnswer
-                        ? "bg-red-500 text-white"
-                        : "bg-gray-300 dark:bg-gray-700"
-                      : "bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600"
+                        : "bg-red-500 text-white"
+                      : "bg-[#D7CCC8] dark:bg-[#3E2723] hover:bg-[#BCAAA4] dark:hover:bg-[#4E342E]"
                   }`}
-                  onClick={(e) => handleAnswerClick(choice, e)}
-                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleAnswerClick(choice)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   {choice}
                 </motion.li>
               ))}
             </ul>
-          )}
 
-          {/* 🎉 Correct Animation */}
-          <AnimatePresence>
-            {showPoint && (
-              <motion.div
-                className="absolute top-2 left-1/2 transform -translate-x-1/2 bg-green-500 text-white font-bold py-2 px-4 rounded-lg shadow-lg"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-              >
-                🎉 +1 Point!
-              </motion.div>
-            )}
-          </AnimatePresence>
+            {/* Answer Feedback */}
+            <AnimatePresence>
+              {showResult && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  className="mt-4 text-center"
+                >
+                  <div className="text-lg font-bold flex items-center justify-center gap-2">
+                    {isCorrect ? (
+                      <div className="text-green-500 flex items-center gap-2">
+                        <CheckCircle size={20} /> 
+                        <span>Correct! {currentPlayer.name} gets a point!</span>
+                      </div>
+                    ) : (
+                      <div className="text-red-500 flex items-center gap-2">
+                        <XCircle size={20} /> 
+                        <span>Incorrect!</span>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-          {/* ✅ Correct Message */}
-          {isCorrect && (
-            <motion.div
-              className="mt-3 text-center text-lg font-bold text-green-500 flex items-center justify-center gap-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              <CheckCircle size={20} /> Correct!
-            </motion.div>
-          )}
-
-          {/* ❌ Incorrect Message */}
-          {isCorrect === false && (
-            <motion.div
-              className="mt-3 text-center text-lg font-bold text-red-500 flex items-center justify-center gap-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              <AlertTriangle size={20} /> Incorrect!
-            </motion.div>
-          )}
-
-          {/* ❌ Remove Card Button (After Answering) */}
-          {selectedAnswer && (
-            <motion.button
-              className="mt-2 bg-red-500 text-white py-2 px-4 rounded flex items-center gap-2 hover:bg-red-600 transition"
-              onClick={(e) => {
-                e.stopPropagation();
-                onRemove(card.id);
-              }}
-            >
-              <XCircle size={18} /> Remove Card
-            </motion.button>
-          )}
-        </div>
-      )}
-    </motion.div>
+            {/* Stealing Option */}
+            <AnimatePresence>
+              {allowSteal && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  className="mt-4"
+                >
+                  <h4 className="text-yellow-500 font-semibold text-center mb-2">
+                    Other players can try to answer!
+                  </h4>
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {players.map((player, index) => {
+                      const alreadyAnswered = answeredPlayers.includes(player.name);
+                      return (
+                        <button
+                          key={index}
+                          disabled={alreadyAnswered}
+                          className={`flex items-center gap-1 py-1 px-3 rounded ${
+                            alreadyAnswered
+                              ? "bg-gray-400 text-gray-600 cursor-not-allowed"
+                              : "bg-blue-500 hover:bg-blue-600 text-white"
+                          }`}
+                          onClick={() => handleSteal(index)}
+                        >
+                          <User size={16} />
+                          {player.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        )}
+      </div>
+    </div>
   );
 };
 
