@@ -14,7 +14,7 @@
   {
     "id": 2,
     "type": "multiple-choice",
-    "video": "https://www.example.com/sample-video.mp4",
+    "video":  "https://drive.google.com/file/d/11RS3rM1zMzA9jdDgbcv6FvzGKN8fEPhl/view?usp=sharing",
     "question": "Watch the video and determine which ethical perspective best justifies the action taken.",
     "choices": [
       "Utilitarianism",
