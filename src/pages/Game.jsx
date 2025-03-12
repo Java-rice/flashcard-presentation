@@ -37,25 +37,24 @@ const Game = () => {
   };
 
   const handleAnswer = (isCorrect) => {
-    setPlayers((prevPlayers) => {
-      const updatedPlayers = [...prevPlayers];
+    if (answeredQuestions.includes(activeQuestion)) return;
 
-      if (isCorrect) {
-        updatedPlayers[currentPlayerIndex].score += 1;
-        updatedPlayers[currentPlayerIndex].position += 1;
-        console.log("After update:", updatedPlayers[currentPlayerIndex]);
-        if (updatedPlayers[currentPlayerIndex].score >= winScore) {
-          setWinner(updatedPlayers[currentPlayerIndex].name);
+    setPlayers((prevPlayers) =>
+      prevPlayers.map((player, index) => {
+        if (index === currentPlayerIndex && isCorrect) {
+          return {
+            ...player,
+            score: player.score + 1,
+            position: player.position + 1,
+          };
         }
+        return player;
+      })
+    );
 
-        // Mark the question as answered
-        setAnsweredQuestions((prev) => [...prev, activeQuestion]);
-      }
-      return updatedPlayers;
-    });
-
-    // Reset active question
-    setActiveQuestion(null);
+    if (isCorrect) {
+      setAnsweredQuestions((prev) => [...prev, activeQuestion]);
+    }
   };
 
   return (

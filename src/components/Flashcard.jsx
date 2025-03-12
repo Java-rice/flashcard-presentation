@@ -25,7 +25,7 @@ const Flashcard = ({
     setShowResult(true);
 
     setTimeout(() => {
-      if (correct) onCorrectAnswer();
+      if (correct) onCorrectAnswer(true);
       else onWrongAnswer();
     }, 1500);
   };
@@ -36,7 +36,7 @@ const Flashcard = ({
         <div className="text-lg font-bold">
           Player: <span className="text-blue-500">{currentPlayer.name}</span>
         </div>
-        <button 
+        <button
           onClick={onReset}
           className="flex items-center gap-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 px-3 py-1 rounded"
         >
@@ -47,11 +47,13 @@ const Flashcard = ({
 
       <div className="relative w-full h-auto">
         {!flipped && (
-          <motion.div 
+          <motion.div
             className="bg-[#D7CCC8] dark:bg-[#4E342E] rounded-lg shadow-lg p-6 flex flex-col items-center justify-center cursor-pointer"
             onClick={handleFlip}
           >
-            <h3 className="text-xl font-bold text-center mb-4">Click to reveal</h3>
+            <h3 className="text-xl font-bold text-center mb-4">
+              Click to reveal
+            </h3>
             <Video size={48} className="text-blue-500" />
           </motion.div>
         )}
@@ -69,7 +71,9 @@ const Flashcard = ({
               </div>
             )}
 
-            <h3 className="text-xl font-bold text-center mb-6">{question.question}</h3>
+            <h3 className="text-xl font-bold text-center mb-6">
+              {question.question}
+            </h3>
 
             <ul className="space-y-3">
               {question.choices.map((choice, index) => (
@@ -93,7 +97,7 @@ const Flashcard = ({
 
             <AnimatePresence>
               {showResult && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
@@ -102,12 +106,12 @@ const Flashcard = ({
                   <div className="text-lg font-bold flex items-center justify-center gap-2">
                     {isCorrect ? (
                       <div className="text-green-500 flex items-center gap-2">
-                        <CheckCircle size={20} /> 
+                        <CheckCircle size={20} />
                         <span>Correct!</span>
                       </div>
                     ) : (
                       <div className="text-red-500 flex items-center gap-2">
-                        <XCircle size={20} /> 
+                        <XCircle size={20} />
                         <span>Incorrect!</span>
                       </div>
                     )}
