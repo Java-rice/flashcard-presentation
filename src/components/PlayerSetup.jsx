@@ -28,10 +28,10 @@ const PlayerSetup = ({ onStart, onClose }) => {
   // Handle game start
   const handleStart = () => {
     const validPlayers = players.filter((p) => p.name.trim() !== "");
-    if (validPlayers.length < 2) {
-      alert("At least 2 players are required.");
-      return;
-    }
+    // if (validPlayers.length < 2) {
+    //   alert("At least 2 players are required.");
+    //   return;
+    // }
     onStart(validPlayers, winScore);
     onClose(); // Close the setup modal after starting
   };
