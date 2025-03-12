@@ -13,6 +13,7 @@ const Flashcard = ({
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
   const [showResult, setShowResult] = useState(false);
+  const [remainingChoices, setRemainingChoices] = useState(question.choices);
 
   const handleFlip = () => setFlipped(true);
 
@@ -25,8 +26,20 @@ const Flashcard = ({
     setShowResult(true);
 
     setTimeout(() => {
-      if (correct) onCorrectAnswer(true);
-      else onWrongAnswer();
+      if (correct) {
+        onCorrectAnswer(true);
+      } else {
+        setRemainingChoices((prev) => prev.filter((c) => c !== choice));
+
+        // If there are no more choices left, trigger wrong answer callback
+        if (remainingChoices.length - 1 === 0) {
+          onWrongAnswer(true);
+        } else {
+          // Reset for another attempt
+          setSelectedAnswer(null);
+          setShowResult(false);
+        }
+      }
     }, 1500);
   };
 
