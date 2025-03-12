@@ -84,7 +84,7 @@ const Flashcard = ({
             {question.question}
           </h3>
 
-          {question.sub_question && <p>{question.sub_question}</p>}
+          {question.subquestion && <p className="text-center my-4">{question.subquestion}</p>}
 
           <ul className="space-y-3">
             {question.choices.map((choice, index) => (
