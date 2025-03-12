@@ -36,7 +36,7 @@ const Game = () => {
     setActiveQuestion(questionIndex);
   };
 
-  const handleAnswer = (isCorrect) => {
+  const handleCorrect = (isCorrect) => {
     if (answeredQuestions.includes(activeQuestion)) return;
 
     setPlayers((prevPlayers) =>
@@ -53,8 +53,27 @@ const Game = () => {
     );
 
     if (isCorrect) {
-      setAnsweredQuestions((prev) => [...prev, activeQuestion]);
+      setAnsweredQuestions((prev) =>
+        prev.includes(activeQuestion) ? prev : [...prev, activeQuestion]
+      );
     }
+  };
+
+  const handleWrong = (isWrong) => {
+    if (answeredQuestions.includes(activeQuestion)) return;
+
+    setPlayers((prevPlayers) =>
+      prevPlayers.map((player, index) => {
+        if (index === currentPlayerIndex && isWrong) {
+          return {
+            ...player,
+            score: player.score,
+            position: player.position,
+          };
+        }
+        return player;
+      })
+    );
   };
 
   return (
@@ -106,8 +125,8 @@ const Game = () => {
                 <div className="flex justify-center">
                   <Flashcard
                     question={questions[activeQuestion]}
-                    onCorrectAnswer={handleAnswer}
-                    onWrongAnswer={() => {}}
+                    onCorrectAnswer={handleCorrect}
+                    onWrongAnswer={handleWrong}
                     currentPlayer={players[currentPlayerIndex]}
                     players={players}
                     setCurrentPlayerIndex={handleSelectPlayer}
