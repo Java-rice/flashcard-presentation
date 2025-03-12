@@ -95,7 +95,7 @@ const Game = () => {
           transition={{ duration: 0.8 }}
           className="text-5xl text-center font-bold mb-6"
         >
-          Ethical Dilemma Game
+          Games of Ethics
         </motion.h1>
 
         {!gameStarted ? (
