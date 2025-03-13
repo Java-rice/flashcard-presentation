@@ -56,6 +56,7 @@ const Flashcard = ({
       </div>
 
       <div className="relative w-full">
+        
         <motion.div className="bg-[#E0B089] dark:bg-[#5D4037] rounded-lg shadow-lg p-6 flex flex-col">
           {question.video && (
             <div className="mb-4">
@@ -67,6 +68,10 @@ const Flashcard = ({
               />
             </div>
           )}
+          <div className="border-white border-2 py-1 px-1 my-2 rounded-lg">
+            <p className="font-bold text-center text-2xl">{question.title}</p>
+          </div>
+          
 
           {question.image && (
             <div className="mb-4">

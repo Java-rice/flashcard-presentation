@@ -6,12 +6,12 @@
     "question": "Isang pharmaceutical company ang nakabuo ng gamot na maaaring magligtas ng buhay ng tao. Pero napakamahal nito kaya hindi kayang bilhin ng karamihan. Ang dahilan ng kumpanya, mataas ang gastos nila sa pananaliksik at pag-develop ng gamot.",
     "subquestion": "Paano nila dapat pag-isipan ang presyo gamit ang modelo nina Reidenbach at Robin?",
     "choices": [
-      "Unahin ang kita dahil negosyo naman sila",
-      "Ibaba ang presyo para mas maraming tao ang makabili",
-      "Isaalang-alang kung patas ba na puro mayayaman lang ang may access sa gamot",
-      "Gamitin ang iba’t ibang pananaw para makahanap ng balanse at etikal na desisyon"
+      "A. Unahin ang kita dahil negosyo naman sila",
+      "B. Ibaba ang presyo para mas maraming tao ang makabili",
+      "C. Isaalang-alang kung patas ba na puro mayayaman lang ang may access sa gamot",
+      "D. Gamitin ang iba’t ibang pananaw para makahanap ng balanse at etikal na desisyon"
     ],
-    "answer": "Gamitin ang iba’t ibang pananaw para makahanap ng balanse at etikal na desisyon"
+    "answer": "D. Gamitin ang iba’t ibang pananaw para makahanap ng balanse at etikal na desisyon"
   },
   {
     "id": 13,
@@ -20,26 +20,26 @@
     "video": "/videos/km_CongTB __720p_24f_20250310_214751.mp4",
     "question": "Base sa action na ginawa ni CongTB, anong ethical approach ang kaniyang pinractice?",
     "choices": [
-      "Common Good Approach",
-      "Egoistic Approach",
-      "Rights Approach",
-      "None of the Above"
+      "A. Common Good Approach",
+      "B. Egoistic Approach",
+      "C. Rights Approach",
+      "D. None of the Above"
     ],
-    "answer": "Egoistic Approach"
+    "answer": "B. Egoistic Approach"
   },
 
   {
     "id": 20,
     "title": "Bonus 5",
     "type": "multiple-choice",
-    "question": "Sino ang nalilink kay Barbie Forteza matapos sila magbreak ni Jack Roberto",
+    "question": "Fill in the blanks: escucha las palabras de las __________________",
     "choices": [
-      "Hotdog",
-      "escucha las palabras de las brujas los secretos escondidos en la noche Loa antiguos dioses invocamos ahora la obra de la magia oculta esta noche alma",
-      "escucha las palabras de las brujas los secretos escucho en de leche Loa antiguos dioses invocamos ahora la obra de la magia oculta esta noche alma",
-      "escucha las palabras de las brujas los secretos escucho en de leches Loa antiguos dioses invoker ahora la obra de la magia oculta esta noche malma"
+      "A. Hotdog",
+      "B. escucha las palabras de las brujas los secretos escondidos en la noche Loa antiguos dioses invocamos ahora la obra de la magia oculta esta noche alma",
+      "C. escucha las palabras de las brujas los secretos escucho en de leche Loa antiguos dioses invocamos ahora la obra de la magia oculta esta noche alma",
+      "D. escucha las palabras de las brujas los secretos escucho en de leches Loa antiguos dioses invoker ahora la obra de la magia oculta esta noche malma"
     ],
-    "answer": "escucha las palabras de las brujas los secretos escondidos en la noche Loa antiguos dioses invocamos ahora la obra de la magia oculta esta noche alma"
+    "answer": "B. escucha las palabras de las brujas los secretos escondidos en la noche Loa antiguos dioses invocamos ahora la obra de la magia oculta esta noche alma"
   },
   {
     "id": 4,
@@ -48,34 +48,34 @@
     "question": "Si David ay isang senior executive, natuklasan niyang may isang empleyado na gumagawa ng pekeng financial reports upang magmukhang mas maunlad ang kanilang kumpanya. Ang pagsiwalat nito ay maaaring makasira ng morale sa kumpanya, pero ang pagpapabaya rito ay maaaring rin namang magdulot ng mas malaking problema sa integridad.",
     "subquestion": "Ano ang dapat gawin ni David batay sa modelo ni Bessinger?",
     "choices": [
-      "Huwag nang aksyunan para maprotektahan ang reputasyon ng kumpanya.",
-      "Pagsabihan nang pribado ang empleyado pero huwag nang i-report.",
-      "I-report ang maling gawain at tiyakin na masusunod ang etikal na pamantayan.",
-      "I-promote ang empleyado para mapanatili ang magandang imahe ng kumpanya."
+      "A. Huwag nang aksyunan para maprotektahan ang reputasyon ng kumpanya.",
+      "B. Pagsabihan nang pribado ang empleyado pero huwag nang i-report.",
+      "C. I-report ang maling gawain at tiyakin na masusunod ang etikal na pamantayan.",
+      "D. I-promote ang empleyado para mapanatili ang magandang imahe ng kumpanya."
     ],
-    "answer": "I-report ang maling gawain at tiyakin na masusunod ang etikal na pamantayan."
+    "answer": "C. I-report ang maling gawain at tiyakin na masusunod ang etikal na pamantayan."
   },
   {
     "id": 5,
     "title": "Ano ang palalakasin",
     "type": "multiple-choice",
-    "question": "Isang kumpanyang gumagawa ng solar panels na tinatawag na GreenTech, ang kumikita nang malaki sa kanilang negosyo. Pero may lumabas na ulat na ang kanilang mga manggagawa sa pabrika ay tumatanggap lamang ng pinakamababang sahod at nakakakuha ng kaunting benepisyo. Kahit nagbibigay sila ng donasyon sa mga proyektong pangkalikasan, dumarami ang reklamo ng mga empleyado tungkol sa kanilang kalagayan.",
+    "question": "Isang kumpanya sa teknolohiya ang nagpaplanong palawakin ang negosyo nito sa isang bansa na may mahihinang batas sa paggawa. Ang hakbang na ito ay magpapataas ng kita ngunit ilalagay ang mga manggagawa sa hindi magandang kondisyon na may kaunting proteksyon.",
     "subquestion": "Bilang pagsunod sa Bessinger Model , ano ang nararapat gawin ng isang kumpanya?",
     "choices": [
-      "Agarang magpalawak dahil ang kita ang pangunahing prayoridad",
-      "Suriin ang epekto sa lahat ng stakeholders bago magdesisyon.",
-      "Siguraduhin na ang pagpapalawak ay sumusunod sa etikal na mga patakaran sa paggawa",
-      "Maging huwaran at magtakda ng mas mataas na pamantayan sa paggawa"
+      "A. Agarang magpalawak dahil ang kita ang pangunahing prayoridad",
+      "B. Suriin ang epekto sa lahat ng stakeholders bago magdesisyon.",
+      "C. Siguraduhin na ang pagpapalawak ay sumusunod sa etikal na mga patakaran sa paggawa",
+      "D. Maging huwaran at magtakda ng mas mataas na pamantayan sa paggawa"
     ],
-    "answer": "Maging huwaran at magtakda ng mas mataas na pamantayan sa paggawa"
+    "answer": "D. Maging huwaran at magtakda ng mas mataas na pamantayan sa paggawa"
   },
   {
     "id": 18,
     "title": "Bonus 3",
     "type": "multiple-choice",
     "question": "Anong sayaw ang paborito ni bong revilla?",
-    "choices": ["Cramping", "Ballet", "Budots", "Gento"],
-    "answer": "Budots"
+    "choices": ["A. Cramping", "B. Ballet", "C. Budots", "D. Gento"],
+    "answer": "C. Budots"
   },
   {
     "id": 6,
@@ -84,20 +84,20 @@
     "video": "/videos/km_Hospital ___720p_25f_20250310_000034.mp4",
     "question": "Base sa scenario na giawa kanina, anong ethical theory ang pinairal ng Doctor?",
     "choices": [
-      "Non-Consequetialism",
-      "Consequetialism",
-      "Agent-centered theory",
-      "None of the Above"
+      "A. Non-Consequetialism",
+      "B. Consequetialism",
+      "C. Agent-centered theory",
+      "D. None of the Above"
     ],
-    "answer": "Consequetialism"
+    "answer": "B. Consequetialism"
   },
   {
     "id": 16,
     "title": "Bonus 1",
     "type": "multiple-choice",
     "question": "Sinong sikat na politician ang nag viral sa kanyang kanta na Wonderful Tonight?",
-    "choices": ["Tito Badang", "Robin Padilla", "Rosmar", "Alden Richards"],
-    "answer": "Robin Padilla"
+    "choices": ["A. Tito Badang", "B. Robin Padilla", "C. Rosmar", "D. Alden Richards"],
+    "answer": "B. Robin Padilla"
   },
 
   {
@@ -107,12 +107,12 @@
     "question": "Isang kumpanyang gumagawa ng solar panels na tinatawag na GreenTech, ang kumikita nang malaki sa kanilang negosyo. Pero may lumabas na ulat na ang kanilang mga manggagawa sa pabrika ay tumatanggap lamang ng pinakamababang sahod at nakakakuha ng kaunting benepisyo. Kahit nagbibigay sila ng donasyon sa mga proyektong pangkalikasan, dumarami ang reklamo ng mga empleyado tungkol sa kanilang kalagayan.",
     "subquestion": "Ano ang dapat gawin ng GreenTech ayon sa modelo ng CSR ni Carroll?",
     "choices": [
-      "Sundin lang ang batas pero huwag nang gumawa ng iba pang hakbang, dahil natutupad na nila ang kanilang legal na obligasyon.",
-      "Taasan ang sahod at benepisyo ng mga manggagawa habang sinisigurong nananatili pa rin silang kumikita.",
-      "Bawasan pa ang sahod para mas lumaki ang kita at dagdagan na lang ang donasyon sa charity.",
-      "Huwag pansinin ang reklamo ng mga empleyado dahil sapat na ang pagbibigay nila sa kawanggawa"
+      "A. Sundin lang ang batas pero huwag nang gumawa ng iba pang hakbang, dahil natutupad na nila ang kanilang legal na obligasyon.",
+      "B. Taasan ang sahod at benepisyo ng mga manggagawa habang sinisigurong nananatili pa rin silang kumikita.",
+      "C. Bawasan pa ang sahod para mas lumaki ang kita at dagdagan na lang ang donasyon sa charity.",
+      "D. Huwag pansinin ang reklamo ng mga empleyado dahil sapat na ang pagbibigay nila sa kawanggawa"
     ],
-    "answer": "Taasan ang sahod at benepisyo ng mga manggagawa habang sinisigurong nananatili pa rin silang kumikita."
+    "answer": "B. Taasan ang sahod at benepisyo ng mga manggagawa habang sinisigurong nananatili pa rin silang kumikita."
   },
   {
     "id": 8,
@@ -121,12 +121,12 @@
     "video": "/videos/km_Boom Tarat __720p_25f_20250310_000947.mp4",
     "question": "Anong ethical approach yung pinapairal nila rito?",
     "choices": [
-      "The Virtue Approach",
-      "The Feminist Approach",
-      "Utilitarian Approach",
-      "None of the Above"
+      "A. The Virtue Approach",
+      "B. The Feminist Approach",
+      "C. Utilitarian Approach",
+      "D. None of the Above"
     ],
-    "answer": "Utilitarian Approach"
+    "answer": "C. Utilitarian Approach"
   },
 
   {
@@ -136,12 +136,12 @@
     "video": "/videos/km_Magnanakaw ___720p_24f_20250310_014254.mp4",
     "question": "Base sa scenario na ito, ano ang pinairal na ethical approach ni Person C (Nichole)? ",
     "choices": [
-      "The Feminist Approach",
-      "The Virtue Approach",
-      "The Divine Command Approach",
-      "None of the Above"
+      "A. The Feminist Approach",
+      "B. The Virtue Approach",
+      "C. The Divine Command Approach",
+      "D. None of the Above"
     ],
-    "answer": "The Divine Command Approach"
+    "answer": "C. The Divine Command Approach"
   },
   {
     "id": 11,
@@ -150,12 +150,12 @@
     "video": "/videos/km_Motor __720p_24f_20250310_012045.mp4",
     "question": "Base sa action na ginawa nung enforcer, anong ethical approach ang kaniyang pinractice?",
     "choices": [
-      "The Rights Approach",
-      "The Duty-Based Approach",
-      "The Virtue Approach",
-      "None of the Above"
+      "A. The Rights Approach",
+      "B. The Duty-Based Approach",
+      "C. The Virtue Approach",
+      "D. None of the Above"
     ],
-    "answer": "The Duty-Based Approach"
+    "answer": "B. The Duty-Based Approach"
   },
 
   {
@@ -164,8 +164,8 @@
     "image": "/assets/spongebob.png",
     "type": "multiple-choice",
     "question": "Ilan ang Hamburger?",
-    "choices": ["16", "15", "17", "14"],
-    "answer": "15"
+    "choices": ["A. 16", "B. 15", "C. 17", "D. 14"],
+    "answer": "B. 15"
   },
   {
     "id": 12,
@@ -174,12 +174,12 @@
     "type": "multiple-choice",
     "question": "Base sa action na ginawa nung isang pasahero, anong ethical approach ang kaniyang pinractice?",
     "choices": [
-      "The Feminist Approach",
-      "The Duty-Based Approach",
-      "The Rights Approach",
-      "None of the Above"
+      "A. The Feminist Approach",
+      "B. The Duty-Based Approach",
+      "C. The Rights Approach",
+      "D. None of the Above"
     ],
-    "answer": "The Rights Approach"
+    "answer": "C. The Rights Approach"
   },
 
   {
@@ -189,12 +189,12 @@
     "video": "/videos/km_Sinigang na Adobo __720p_24f_20250310_013604.mp4",
     "question": "Base sa action na ginawa ng nanay, anong ethical approach ang kaniyang pinractice?",
     "choices": [
-      "Common Good Approach",
-      "Egoistic Approach",
-      "Divine Command Approach",
-      "None of the Above"
+      "A. Common Good Approach",
+      "B. Egoistic Approach",
+      "C. Divine Command Approach",
+      "D. None of the Above"
     ],
-    "answer": "Common Good Approach"
+    "answer": "A. Common Good Approach"
   },
   {
     "id": 7,
@@ -203,12 +203,12 @@
     "video": "/videos/km_Wallet_720p_25f_20250309_195039.mp4",
     "question": "Base sa scenario na ito, anong ethical theory yung pinapakita nila",
     "choices": [
-      "Fairness/Justice Approach",
-      "Utilitarian Approach",
-      "Divine Command Approach",
-      "None of the Above"
+      "A. Fairness/Justice Approach",
+      "B. Utilitarian Approach",
+      "C. Divine Command Approach",
+      "D. None of the Above"
     ],
-    "answer": "Fairness/Justice Approach"
+    "answer": "A. Fairness/Justice Approach"
   },
   {
     "id": 15,
@@ -217,12 +217,12 @@
     "type": "multiple-choice",
     "question": "Base sa naganap na aksyon, ano ang ipinapakita nitong teorya ng etiko?",
     "choices": [
-      "The Virtue Approach",
-      "The Feminist Approach",
-      "Utilitarian Approach",
-      "None of the Above"
+      "A. The Virtue Approach",
+      "B. The Feminist Approach",
+      "C. Utilitarian Approach",
+      "D. None of the Above"
     ],
-    "answer": "The Virtue Approach"
+    "answer": "A. The Virtue Approach"
   },
 
   {
@@ -230,8 +230,8 @@
     "title": "Bonus 2",
     "type": "multiple-choice",
     "question": "Saan lumaki si  Alice Guo?",
-    "choices": ["Farm", "Intramuros", "Etivac", "Davao"],
-    "answer": "Farm"
+    "choices": ["A. Farm", "B. Intramuros", "C. Etivac", "D. Davao"],
+    "answer": "A. Farm"
   },
   {
     "id": 19,
@@ -239,12 +239,12 @@
     "type": "multiple-choice",
     "question": "Sino ang nalilink kay Barbie Forteza matapos sila magbreak ni Jack Roberto",
     "choices": [
-      "Daniel Padilla",
-      "Diwata",
-      "David Licauco",
-      "Kurt Denver Torreda"
+      "A. Daniel Padilla",
+      "B. Diwata",
+      "C. David Licauco",
+      "D. Kurt Denver Torreda"
     ],
-    "answer": "David Licauco"
+    "answer": "C. David Licauco"
   },
   {
     "id": 3,
@@ -253,12 +253,12 @@
     "question": "Nadiskubre ni Lisa, isang project manager, na ang bagong marketing campaign ng kanilang kumpanya ay mapanlinlang dahil pinalalabas nitong mas maganda ang kanilang produkto kaysa sa totoong benepisyo nito. Alam niyang mali ito, pero pinipilit siya ng kanyang boss na ipagpatuloy ito para mapataas ang kanilang sales.",
     "subquestion": "Ano ang dapat gawin ni Lisa ayon sa Four-Stage Model ni Rest?",
     "choices": [
-      "Kilalanin ang problema pero huwag nang kumilos, dahil hindi naman siya ang namamahala sa marketing.",
-      "Magsalita at ipaglaban ang pagbabago kahit na may posibleng pagtutol dito.",
-      "Huwag nang makialam at mag-focus na lang sa kanyang trabaho para maiwasan ang gulo.",
-      "I-report nang palihim sa mga awtoridad nang hindi muna ito inaayos sa loob ng kumpanya."
+      "A. Kilalanin ang problema pero huwag nang kumilos, dahil hindi naman siya ang namamahala sa marketing.",
+      "B. Magsalita at ipaglaban ang pagbabago kahit na may posibleng pagtutol dito.",
+      "C. Huwag nang makialam at mag-focus na lang sa kanyang trabaho para maiwasan ang gulo.",
+      "D. I-report nang palihim sa mga awtoridad nang hindi muna ito inaayos sa loob ng kumpanya."
     ],
-    "answer": "Magsalita at ipaglaban ang pagbabago kahit na may posibleng pagtutol dito."
+    "answer": "B. Magsalita at ipaglaban ang pagbabago kahit na may posibleng pagtutol dito."
   },
   {
     "id": 9,
@@ -267,11 +267,11 @@
     "video": "/videos/km_Walang citation __720p_24f_20250310_220610.mp4",
     "question": "Base sa action na ginawa ni Person B (Nichole), anong ethical approach ang kaniyang pinractice?",
     "choices": [
-      "Egoistic Approach",
-      "Virtue Approach",
-      "Rights Approach",
-      "None of the Above"
+      "A. Egoistic Approach",
+      "B. Virtue Approach",
+      "C. Rights Approach",
+      "D. None of the Above"
     ],
-    "answer": "Egoistic Approach"
+    "answer": "A. Egoistic Approach"
   }
 ]
