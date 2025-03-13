@@ -131,7 +131,7 @@ const Game = () => {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl py-10 text-center font-bold mb-6"
+          className="text-5xl py-4 text-center font-bold"
         >
           Games of Ethics
         </motion.h1>
