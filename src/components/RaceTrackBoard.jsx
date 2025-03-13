@@ -69,12 +69,22 @@ const RaceTrackBoard = ({
         <h3 className="text-lg font-semibold mb-4 text-center text-gray-800 dark:text-gray-200">
           Race Progress 🚦
         </h3>
-        <div className="relative h-64 w-full bg-gradient-to-b from-[#6D4C41] to-[#4E342E] rounded-lg p-4 shadow-inner overflow-hidden border-2 border-[#5D4037]">
+
+        {/* Dynamic Track Height */}
+        <div
+          className="relative w-full bg-gradient-to-b from-[#6D4C41] to-[#4E342E] rounded-lg p-4 shadow-inner overflow-hidden border-2 border-[#5D4037]"
+          style={{
+            height: `${Math.max(150, players.length * 50)}px`, // Adjust based on players
+          }}
+        >
           {/* Track Lanes */}
           {players.map((_, index) => (
             <div
               key={index}
-              className="absolute left-0 right-6 h-[2px] bg-gray-200 opacity-50 top-[calc(16%+40px*index)]"
+              className="absolute left-0 right-6 h-[2px] bg-gray-200 opacity-50"
+              style={{
+                top: `${index * 50 + 20}px`, // Space lanes dynamically
+              }}
             ></div>
           ))}
 
@@ -83,11 +93,9 @@ const RaceTrackBoard = ({
             <Flag size={32} className="text-black mx-auto" />
           </div>
 
-          {/* circle-user Players */}
+          {/* Players */}
           {players.map((player, index) => {
             const progressPercentage = (player.position / winScore) * 100;
-            const laneOffset = index * 40 + 10; // Space players apart vertically
-
             return (
               <motion.div
                 key={index}
@@ -95,7 +103,7 @@ const RaceTrackBoard = ({
                 initial={{ left: "5%" }}
                 animate={{
                   left: `${progressPercentage}%`,
-                  top: `calc(${laneOffset}px)`,
+                  top: `${index * 50 + 10}px`, // Adjust top position dynamically
                 }}
                 transition={{
                   type: "spring",
