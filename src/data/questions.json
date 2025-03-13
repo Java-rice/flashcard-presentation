@@ -1,76 +1,278 @@
 [
   {
     "id": 1,
+    "title": "Environmentalist kuno",
     "type": "multiple-choice",
-    "question": "Which ethical theory emphasizes duty and rules over consequences?",
+    "question": "Isang kumpanyang gumagawa ng solar panels na tinatawag na GreenTech, ang kumikita nang malaki sa kanilang negosyo. Pero may lumabas na ulat na ang kanilang mga manggagawa sa pabrika ay tumatanggap lamang ng pinakamababang sahod at nakakakuha ng kaunting benepisyo. Kahit nagbibigay sila ng donasyon sa mga proyektong pangkalikasan, dumarami ang reklamo ng mga empleyado tungkol sa kanilang kalagayan.",
+    "subquestion":"Ano ang dapat gawin ng GreenTech ayon sa modelo ng CSR ni Carroll?",
     "choices": [
-      "Utilitarianism",
-      "Deontology",
-      "Virtue Ethics",
-      "Relativism"
+      "Sundin lang ang batas pero huwag nang gumawa ng iba pang hakbang, dahil natutupad na nila ang kanilang legal na obligasyon.",
+      "Taasan ang sahod at benepisyo ng mga manggagawa habang sinisigurong nananatili pa rin silang kumikita.",
+      "Bawasan pa ang sahod para mas lumaki ang kita at dagdagan na lang ang donasyon sa charity.",
+      "Huwag pansinin ang reklamo ng mga empleyado dahil sapat na ang pagbibigay nila sa kawanggawa"
     ],
-    "answer": "Deontology"
+    "answer": "Taasan ang sahod at benepisyo ng mga manggagawa habang sinisigurong nananatili pa rin silang kumikita."
   },
   {
     "id": 2,
+    "title": "Aanhin ang research",
     "type": "multiple-choice",
-    "video":  "/videos/km_Boom Tarat __720p_25f_20250310_000947.mp4",
-    "question": "Watch the video and determine which ethical perspective best justifies the action taken.",
+    "question": "Isang pharmaceutical company ang nakabuo ng gamot na maaaring magligtas ng buhay ng tao. Pero napakamahal nito kaya hindi kayang bilhin ng karamihan. Ang dahilan ng kumpanya, mataas ang gastos nila sa pananaliksik at pag-develop ng gamot.",
+    "subquestion": "Paano nila dapat pag-isipan ang presyo gamit ang modelo nina Reidenbach at Robin?",
     "choices": [
-      "Utilitarianism",
-      "Ethical Egoism",
-      "Virtue Ethics",
-      "Divine Command Theory"
+      "Unahin ang kita dahil negosyo naman sila",
+      "Ibaba ang presyo para mas maraming tao ang makabili",
+      "Isaalang-alang kung patas ba na puro mayayaman lang ang may access sa gamot",
+      "Gamitin ang iba’t ibang pananaw para makahanap ng balanse at etikal na desisyon"
     ],
-    "answer": "Utilitarianism"
+    "answer": "Gamitin ang iba’t ibang pananaw para makahanap ng balanse at etikal na desisyon"
   },
   {
     "id": 3,
+    "title": "Pekeein mo lang",
     "type": "multiple-choice",
-    "question": "Which ethical theory is based on developing good character traits?",
+    "question": "Nadiskubre ni Lisa, isang project manager, na ang bagong marketing campaign ng kanilang kumpanya ay mapanlinlang dahil pinalalabas nitong mas maganda ang kanilang produkto kaysa sa totoong benepisyo nito. Alam niyang mali ito, pero pinipilit siya ng kanyang boss na ipagpatuloy ito para mapataas ang kanilang sales.",
+    "subquestion": "Ano ang dapat gawin ni Lisa ayon sa Four-Stage Model ni Rest?",
     "choices": [
-      "Consequentialism",
-      "Virtue Ethics",
-      "Deontology",
-      "Contractarianism"
+      "Kilalanin ang problema pero huwag nang kumilos, dahil hindi naman siya ang namamahala sa marketing.",
+      "Magsalita at ipaglaban ang pagbabago kahit na may posibleng pagtutol dito.",
+      "Huwag nang makialam at mag-focus na lang sa kanyang trabaho para maiwasan ang gulo.",
+      "I-report nang palihim sa mga awtoridad nang hindi muna ito inaayos sa loob ng kumpanya."
     ],
-    "answer": "Virtue Ethics"
+    "answer": "Magsalita at ipaglaban ang pagbabago kahit na may posibleng pagtutol dito."
   },
   {
     "id": 4,
+    "title": "Pekein mo ulit",
     "type": "multiple-choice",
-    "question": "Which principle states that an action is right if it benefits the greatest number of people?",
+    "question": "Si David ay isang senior executive, natuklasan niyang may isang empleyado na gumagawa ng pekeng financial reports upang magmukhang mas maunlad ang kanilang kumpanya. Ang pagsiwalat nito ay maaaring makasira ng morale sa kumpanya, pero ang pagpapabaya rito ay maaaring rin namang magdulot ng mas malaking problema sa integridad.",
+    "subquestion": "Ano ang dapat gawin ni David batay sa modelo ni Bessinger?",
     "choices": [
-      "Ethical Relativism",
-      "Categorical Imperative",
-      "Utilitarianism",
-      "Divine Command Theory"
+      "Huwag nang aksyunan para maprotektahan ang reputasyon ng kumpanya.",
+      "Pagsabihan nang pribado ang empleyado pero huwag nang i-report.",
+      "I-report ang maling gawain at tiyakin na masusunod ang etikal na pamantayan.",
+      "I-promote ang empleyado para mapanatili ang magandang imahe ng kumpanya."
     ],
-    "answer": "Utilitarianism"
+    "answer": "I-report ang maling gawain at tiyakin na masusunod ang etikal na pamantayan."
   },
   {
     "id": 5,
+    "title":"Ano ang palalakasin",
     "type": "multiple-choice",
-    "video": "https://www.example.com/sample-video.mp4",
-    "question": "Based on the video, which ethical principle is most clearly demonstrated?",
+    "question": "Isang kumpanyang gumagawa ng solar panels na tinatawag na GreenTech, ang kumikita nang malaki sa kanilang negosyo. Pero may lumabas na ulat na ang kanilang mga manggagawa sa pabrika ay tumatanggap lamang ng pinakamababang sahod at nakakakuha ng kaunting benepisyo. Kahit nagbibigay sila ng donasyon sa mga proyektong pangkalikasan, dumarami ang reklamo ng mga empleyado tungkol sa kanilang kalagayan.",
+    "subquestion": "Bilang pagsunod sa Bessinger Model , ano ang nararapat gawin ng isang kumpanya?",
     "choices": [
-      "Justice",
-      "Autonomy",
-      "Beneficence",
-      "Nonmaleficence"
+      "Agarang magpalawak dahil ang kita ang pangunahing prayoridad",
+      "Suriin ang epekto sa lahat ng stakeholders bago magdesisyon.",
+      "Siguraduhin na ang pagpapalawak ay sumusunod sa etikal na mga patakaran sa paggawa",
+      "Maging huwaran at magtakda ng mas mataas na pamantayan sa paggawa"
     ],
-    "answer": "Beneficence"
+    "answer": "Maging huwaran at magtakda ng mas mataas na pamantayan sa paggawa"
   },
   {
     "id": 6,
+    "title": "Sinong Pipiliin Ko?",
     "type": "multiple-choice",
-    "question": "Which ethical theory suggests that moral values are dependent on cultural or individual beliefs?",
+    "video": "/videos/km_Hospital ___720p_25f_20250310_000034.mp4",
+    "question": "Base sa scenario na giawa kanina, anong ethical theory ang pinairal ng Doctor?",
     "choices": [
-      "Moral Absolutism",
-      "Ethical Relativism",
-      "Utilitarianism",
-      "Natural Law"
+      "Non-Consequetialism",
+      "Consequetialism",
+      "Agent-centered theory",
+      "None of the Above"
     ],
-    "answer": "Ethical Relativism"
+    "answer": "Consequetialism"
+  },
+  {
+    "id": 7,
+    "title":"Barya o Konsensya?",
+    "type": "multiple-choice",
+    "video": "/videos/km_Wallet_720p_25f_20250309_195039.mp4",
+    "question": "Base sa scenario na ito, anong ethical theory yung pinapakita nila",
+    "choices": [
+      "Fairness/Justice Approach",
+      "Utilitarian Approach",
+      "Divine Command Approach",
+      "None of the Above"
+    ],
+    "answer": "Fairness/Justice Approach"
+  },{
+    "id": 8,
+    "title":"Boom Tarat Trapo",
+    "type": "multiple-choice",
+    "video":"/videos/km_Boom Tarat __720p_25f_20250310_000947.mp4",
+    "question": "Anong ethical approach yung pinapairal nila rito?",
+    "choices": [
+      "The Virtue Approach",
+      "The Feminist Approach",
+      "Utilitarian Approach",
+      "None of the Above"
+    ],
+    "answer": "Utilitarian Approach"
+  },{
+    "id": 9,
+    "title":"Walang Citation",
+    "type": "multiple-choice",
+    "video":"/videos/km_Walang citation __720p_24f_20250310_220610.mp4",
+    "question": "Base sa action na ginawa ni Person B (Nichole), anong ethical approach ang kaniyang pinractice?",
+    "choices": [
+      "Egoistic Approach",
+      "Virtue Approach",
+      "Rights Approach",
+      "None of the Above"
+    ],
+    "answer": "Egoistic Approach"
+  },{
+    "id": 10,
+    "title":"Hule Pero Di Kulong",
+    "type": "multiple-choice",
+    "video":"/videos/km_Magnanakaw ___720p_24f_20250310_014254.mp4",
+    "question": "Base sa scenario na ito, ano ang pinairal na ethical approach ni Person C (Nichole)? ",
+    "choices": [
+      "The Feminist Approach",
+      "The Virtue Approach",
+      "The Divine Command Approach",
+      "None of the Above"
+    ],
+    "answer": "The Divine Command Approach"
+  },{
+    "id": 11,
+    "title":"Akin na Lisensya mo",
+    "type": "multiple-choice",
+    "video":"/videos/km_Motor __720p_24f_20250310_012045.mp4",
+    "question": "Base sa action na ginawa nung enforcer, anong ethical approach ang kaniyang pinractice?",
+    "choices": [
+      "The Rights Approach",
+      "The Duty-Based Approach",
+      "The Virtue Approach",
+      "None of the Above"
+    ],
+    "answer": "The Duty-Based Approach"
+  },{
+    "id": 12,
+    "title":"Bat Nilalabas Mo Cellphone Mo",
+    "video":"/videos/km_Jeep 2 __720p_24f_20250310_005712.mp4",
+    "type": "multiple-choice",
+    "question": "Base sa action na ginawa nung isang pasahero, anong ethical approach ang kaniyang pinractice?",
+    "choices": [
+      "The Feminist Approach",
+      "The Duty-Based Approach",
+      "The Rights Approach",
+      "None of the Above"
+    ],
+    "answer": "The Rights Approach"
+  },{
+    "id": 13,
+    "title":"Team Payaman",
+    "type": "multiple-choice",
+    "video":"/videos/km_CongTB __720p_24f_20250310_214751.mp4",
+    "question": "Base sa action na ginawa ni CongTB, anong ethical approach ang kaniyang pinractice?",
+    "choices": [
+      "Common Good Approach",
+      "Egoistic Approach",
+      "Rights Approach",
+      "None of the Above"
+    ],
+    "answer": "Egoistic Approach"
+  },{
+    "id": 14,
+    "title":"Sinigang na Adobo",
+    "type": "multiple-choice",
+    "video":"/videos/km_Sinigang na Adobo __720p_24f_20250310_013604.mp4",
+    "question": "Base sa action na ginawa ng nanay, anong ethical approach ang kaniyang pinractice?",
+    "choices": [
+      "Common Good Approach",
+      "Egoistic Approach",
+      "Divine Command Approach",
+      "None of the Above"
+    ],
+    "answer": "Common Good Approach"
+  },{
+    "id": 15,
+    "title":"Tatakbong Epal",
+    "video":"/videos/km_Charity __720p_24f_20250310_223336.mp4",
+    "type": "multiple-choice",
+    "question": "Base sa naganap na aksyon, ano ang ipinapakita nitong teorya ng etiko?",
+    "choices": [
+      "The Virtue Approach",
+      "The Feminist Approach",
+      "Utilitarian Approach",
+      "None of the Above"
+    ],
+    "answer": "The Virtue Approach"
+  },{
+    "id": 16,
+    "title":"Bonus 1",
+    "type": "multiple-choice",
+    "question": "Sinong sikat na politician ang nag viral sa kanyang kanta na Wonderful Tonight?",
+    "choices": [
+      "Tito Badang",
+      "Robin Padilla",
+      "Rosmar",
+      "Alden Richards"
+    ],
+    "answer": "Robin Padilla"
+  },{
+    "id": 17,
+    "title":"Bonus 2",
+    "type": "multiple-choice",
+    "question": "Saan lumaki si  Alice Guo?",
+    "choices": [
+      "Farm",
+      "Intramuros",
+      "Etivac",
+      "Davao"
+    ],
+    "answer": "Farm"
+  },{
+    "id": 18,
+    "title":"Bonus 3",
+    "type": "multiple-choice",
+    "question": "Anong sayaw ang paborito ni bong revilla?",
+    "choices": [
+      "Cramping",
+      "Ballet",
+      "Budots",
+      "Gento"
+    ],
+    "answer": "Budots"
+  },{
+    "id": 19,
+    "title":"Bonus 4",
+    "type": "multiple-choice",
+    "question": "Sino ang nalilink kay Barbie Forteza matapos sila magbreak ni Jack Roberto",
+    "choices": [
+      "Daniel Padilla",
+      "Diwata",
+      "David Licauco",
+      "Kurt Denver Torreda"
+    ],
+    "answer": "David Licauco"
+  },{
+    "id": 20,
+    "title":"Bonus 5",
+    "type": "multiple-choice",
+    "question": "Sino ang nalilink kay Barbie Forteza matapos sila magbreak ni Jack Roberto",
+    "choices": [
+      "Hotdog",
+      "escucha las palabras de las brujas los secretos escondidos en la noche Loa antiguos dioses invocamos ahora la obra de la magia oculta esta noche alma",
+      "escucha las palabras de las brujas los secretos escucho en de leche Loa antiguos dioses invocamos ahora la obra de la magia oculta esta noche alma",
+      "escucha las palabras de las brujas los secretos escucho en de leches Loa antiguos dioses invoker ahora la obra de la magia oculta esta noche malma"
+    ],
+    "answer": "escucha las palabras de las brujas los secretos escondidos en la noche Loa antiguos dioses invocamos ahora la obra de la magia oculta esta noche alma"
+  },{
+    "id": 21,
+    "title":"Bonus 6",
+    "image":"/assets/spongebob.png",
+    "type": "multiple-choice",
+    "question": "Ilan ang Hamburger?",
+    "choices": [
+      "16",
+      "15",
+      "17",
+      "14"
+    ],
+    "answer": "14"
   }
+  
 ]

@@ -6,6 +6,10 @@ export const lessons = [
           "It helps us decide what is fair, honest, and respectful toward others. Ethics applies to personal actions, businesses, and even government policies.",
           "Good ethics create trust, fairness, and responsibility in society. Without ethics, people might act selfishly or harm others just to benefit themselves."
         ],
+        "media": {
+          "type": "image", 
+          "url": "/assets/ethics.jpg"
+        },
         "details": [
           "Ethics teaches us to be honest and fair.",
           "It helps people make good decisions, even when no one is watching.",
@@ -15,12 +19,20 @@ export const lessons = [
       
     {
       "title": "Three Broad Types of Ethical Theory",
+      "media": {
+          "type": "image", 
+          "url": "/assets/theory.jpg"
+        },
       "content": [
         "Ang mga teoryang etikal ay maaaring hatiin sa tatlong pangunahing uri: Consequentialist, Non-consequentialist, at Agent-Centered Theories."
       ]
     },
     {
       "title": "Consequentialist Theories",
+      "media": {
+          "type": "image", 
+          "url": "/assets/consequentialist.jpg"
+        },
       "content": [
         "Ito ay tumutukoy sa etikal na resulta o epekto ng isang kilos."
       ],
@@ -35,6 +47,10 @@ export const lessons = [
       "content": [
         "Mas binibigyang pansin ang layunin o intensyon ng gumagawa kaysa sa resulta ng kilos."
       ],
+      "media": {
+          "type": "image", 
+          "url": "/assets/deontologist.jpg"
+        },
       "details": [
         "Duty Based Approach - Gumagawa ng tama dahil ito ang nararapat, hindi dahil sa resulta nito. (deontological approach) (ethical obligations) (universal moral law).",
         "Rights Approach - Iginagalang ang karapatan ng bawat isa sa paggawa ng desisyon.",
@@ -47,6 +63,10 @@ export const lessons = [
       "content": [
         "Higit na iniintindi ang pangkalahatang etikal na pagkatao ng isang indibidwal kaysa sa moralidad ng isang partikular na kilos."
       ],
+      "media": {
+          "type": "image", 
+          "url": "/assets/humanity.jpg"
+        },
       "details": [
         "The Virtue Approach - Ang isang mabuting kilos ay nagmumula sa mabuting ugali o asal ng isang tao.",
         "The Feminist Approach - Binibigyang-halaga ang pakikiramay, ugnayan, at pagkakapantay-pantay sa paggawa ng desisyon."
@@ -57,6 +77,10 @@ export const lessons = [
       "content": [
         "Iba't ibang modelo ang ginagamit upang maunawaan at mailapat ang mga etikal na prinsipyo sa negosyo at lipunan."
       ],
+      "media": {
+          "type": "image", 
+          "url": "/assets/models.jpg"
+        },
       "details": [
         "The Carrol Model - Pinapakita na ang negosyo ay may responsibilidad sa ekonomiya, legal, etikal, at pagkakawanggawa.",
         "The Reidenbach and Robin Model - Tumutukoy sa iba't ibang antas ng etikal na pag-iisip batay sa moralidad at kultura.",
@@ -69,6 +93,10 @@ export const lessons = [
       "content": [
         "Ito ay isang sunod-sunod na hakbang upang makatulong sa paggawa ng etikal na desisyon."
       ],
+      "media": {
+          "type": "image", 
+          "url": "/assets/guidelines.jpg"
+        },
       "details": [
         "Stage 1 - The Issue: Kilalanin na mayroong isang etikal na isyu o tunggalian.",
         "Stage 2 - The Problem: Tukuyin at alamin ang pinagmulan ng problema sa pamamagitan ng pagkalap ng mga katotohanan.",
@@ -85,6 +113,10 @@ export const lessons = [
       "content": [
         "Ito ang mga mahahalagang prinsipyo na dapat sundin ng mga lider sa negosyo upang mapanatili ang mataas na pamantayan ng etikal na pag-uugali."
       ],
+      "media": {
+          "type": "image", 
+          "url": "/assets/principles.jpg"
+        },
       "details": [
         "Honesty",
         "Integrity",
@@ -101,6 +133,10 @@ export const lessons = [
       "content": [
         "Ang pagsunod sa mabuting etikal na pag-uugali ay nagdudulot ng maraming benepisyo sa isang indibidwal o organisasyon."
       ],
+      "media": {
+          "type": "image", 
+          "url": "/assets/benefits.jpg"
+        },
       "details": [
         "Competitive advantage",
         "Better staff attraction and retention",
