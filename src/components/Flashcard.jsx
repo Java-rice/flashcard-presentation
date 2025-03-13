@@ -16,7 +16,6 @@ const Flashcard = ({
   const [remainingChoices, setRemainingChoices] = useState(question.choices);
 
   const handleFlip = () => setFlipped(true);
-
   const handleAnswerClick = (choice) => {
     if (selectedAnswer) return;
 
@@ -29,16 +28,11 @@ const Flashcard = ({
       if (correct) {
         onCorrectAnswer(true);
       } else {
+        onWrongAnswer(true);
+        setIsCorrect(null);
+        setShowResult(false);
+        setSelectedAnswer(null);
         setRemainingChoices((prev) => prev.filter((c) => c !== choice));
-
-        // If there are no more choices left, trigger wrong answer callback
-        if (remainingChoices.length - 1 === 0) {
-          onWrongAnswer(true);
-        } else {
-          // Reset for another attempt
-          setSelectedAnswer(null);
-          setShowResult(false);
-        }
       }
     }, 1500);
   };
@@ -89,7 +83,7 @@ const Flashcard = ({
             </h3>
 
             <ul className="space-y-3">
-              {question.choices.map((choice, index) => (
+              {remainingChoices.map((choice, index) => (
                 <motion.li
                   key={index}
                   className={`p-3 rounded-md text-center cursor-pointer transition ${

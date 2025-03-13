@@ -17,7 +17,14 @@ const Game = () => {
   const [answeredQuestions, setAnsweredQuestions] = useState([]); // Track answered questions
 
   const handleStart = (players, winScore) => {
-    setPlayers(players.map((player) => ({ ...player, position: 0, score: 0 })));
+    setPlayers(
+      players.map((player) => ({
+        ...player,
+        position: 0,
+        score: 0,
+        wrong: 0,
+      }))
+    );
     setWinScore(winScore);
     setGameStarted(true);
     setWinner(null);
@@ -33,6 +40,14 @@ const Game = () => {
   const handleSelectQuestion = (questionIndex) => {
     if (activeQuestion !== null || answeredQuestions.includes(questionIndex))
       return; // Prevent selection
+
+    setPlayers((prevPlayers) =>
+      prevPlayers.map((player) => ({
+        ...player,
+        wrong: 0, // Reset wrong count
+      }))
+    );
+
     setActiveQuestion(questionIndex);
   };
 
@@ -46,6 +61,7 @@ const Game = () => {
             ...player,
             score: player.score + 1,
             position: player.position + 1,
+            wrong: 0,
           };
         }
         return player;
@@ -69,6 +85,7 @@ const Game = () => {
             ...player,
             score: player.score,
             position: player.position,
+            wrong: 1,
           };
         }
         return player;
