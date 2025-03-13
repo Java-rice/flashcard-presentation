@@ -86,7 +86,7 @@ const Flashcard = ({
           )}
 
           <ul className="space-y-3">
-            {question.choices.map((choice, index) => (
+            {remainingChoices.map((choice, index) => (
               <motion.li
                 key={index}
                 className={`p-3 rounded-md text-center cursor-pointer transition ${

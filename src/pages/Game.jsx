@@ -34,6 +34,7 @@ const Game = () => {
   };
 
   const handleSelectPlayer = (index) => {
+    if (players[index].wrong === 1) return; // Prevent selecting a player with wrong = 1
     setCurrentPlayerIndex(index);
   };
 
@@ -83,14 +84,20 @@ const Game = () => {
         if (index === currentPlayerIndex && isWrong) {
           return {
             ...player,
-            score: player.score,
-            position: player.position,
             wrong: 1,
           };
         }
         return player;
       })
     );
+
+    setCurrentPlayerIndex((prevIndex) => {
+      let newIndex = (prevIndex + 1) % players.length;
+      while (players[newIndex].wrong === 1) {
+        newIndex = (newIndex + 1) % players.length;
+      }
+      return newIndex;
+    });
   };
 
   return (

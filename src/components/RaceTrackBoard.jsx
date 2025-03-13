@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CircleUser, Flag } from "lucide-react";
+import { CircleUser, User, Flag } from "lucide-react";
 
 // Function to get distinct colors for players
 const getPlayerColor = (index) => {
