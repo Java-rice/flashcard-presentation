@@ -4,9 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import Flashcard from "@src/components/Flashcard";
 import PlayerSetup from "@src/components/PlayerSetup";
 import questions from "@src/data/questions";
-import RaceTrackBoard from "../components/RaceTrackBoard";
+import RaceTrackBoard from "@src/components/RaceTrackBoard";
+import { useNavigate } from "react-router-dom";
 
 const Game = () => {
+  const navigate = useNavigate();
   const [players, setPlayers] = useState([]);
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
@@ -251,12 +253,20 @@ const Game = () => {
                       </li>
                     ))}
                   </ol>
-                  <button
-                    onClick={() => window.location.reload()}
-                    className="mt-4 bg-[#795548] text-[#EFEBE9] px-4 py-2 rounded-lg border border-[#A1887F] hover:bg-[#5D4037] transition"
-                  >
-                    Back to Main Menu
-                  </button>
+                  <div className="mt-4 flex justify-center gap-4">
+                    <button
+                      onClick={() => navigate("/game")}
+                      className="bg-[#795548] text-[#EFEBE9] px-4 py-2 rounded-lg border border-[#A1887F] hover:bg-[#5D4037] transition"
+                    >
+                      Back to Main Menu
+                    </button>
+                    <button
+                      onClick={() => navigate("/questions")}
+                      className="bg-[#A1887F] text-[#4E342E] px-4 py-2 rounded-lg border border-[#6D4C41] hover:bg-[#D7CCC8] transition"
+                    >
+                      View All Questions
+                    </button>
+                  </div>
                 </motion.div>
               </div>
             );
@@ -283,13 +293,13 @@ const Game = () => {
               </h3>
               <div className="mt-4 flex justify-center gap-4">
                 <button
-                  onClick={() => window.location.reload()}
+                  onClick={() => navigate("/game")}
                   className="bg-[#795548] text-[#EFEBE9] px-4 py-2 rounded-lg border border-[#A1887F] hover:bg-[#5D4037] transition"
                 >
                   Back to Main Menu
                 </button>
                 <button
-                  onClick={() => setWinner(null)}
+                  onClick={() => navigate("/questions")}
                   className="bg-[#A1887F] text-[#4E342E] px-4 py-2 rounded-lg border border-[#6D4C41] hover:bg-[#D7CCC8] transition"
                 >
                   View All Questions
