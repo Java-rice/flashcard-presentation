@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Plus, X, CheckCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 const PlayerSetup = ({ onStart, onClose }) => {
   const [players, setPlayers] = useState([{ name: "", score: 0 }]);
   const [winScore, setWinScore] = useState(5);
+  const [gameMode, setGameMode] = useState("winScore"); // 'winScore' or 'completeQuestions'
 
   // Add a new player input field
   const addPlayer = () => {
@@ -28,11 +30,11 @@ const PlayerSetup = ({ onStart, onClose }) => {
   // Handle game start
   const handleStart = () => {
     const validPlayers = players.filter((p) => p.name.trim() !== "");
-    // if (validPlayers.length < 2) {
-    //   alert("At least 2 players are required.");
-    //   return;
-    // }
-    onStart(validPlayers, winScore);
+    if (validPlayers.length === 0) {
+      toast.error("At least one player is required to start the game.");
+      return;
+    }
+    onStart(validPlayers, gameMode === "winScore" ? winScore : "completeQuestions");
     onClose(); // Close the setup modal after starting
   };
 
@@ -76,21 +78,36 @@ const PlayerSetup = ({ onStart, onClose }) => {
         <Plus size={20} /> Add Player
       </button>
 
-      {/* Winning Score Selection */}
+      {/* Game Mode Selection */}
       <div className="mt-6">
-        <label className="block text-lg font-medium">Winning Score:</label>
+        <label className="block text-lg font-medium">Game Mode:</label>
         <select
           className="w-full p-3 border rounded-lg dark:bg-[#5D4037] focus:outline-none"
-          value={winScore}
-          onChange={(e) => setWinScore(Number(e.target.value))}
+          value={gameMode}
+          onChange={(e) => setGameMode(e.target.value)}
         >
-          {[3, 5, 7, 10].map((score) => (
-            <option key={score} value={score}>
-              {score} Points
-            </option>
-          ))}
+          <option value="winScore">Winning Score</option>
+          <option value="completeQuestions">Complete All Questions</option>
         </select>
       </div>
+
+      {/* Winning Score Selection (Shown if gameMode is 'winScore') */}
+      {gameMode === "winScore" && (
+        <div className="mt-6">
+          <label className="block text-lg font-medium">Winning Score:</label>
+          <select
+            className="w-full p-3 border rounded-lg dark:bg-[#5D4037] focus:outline-none"
+            value={winScore}
+            onChange={(e) => setWinScore(Number(e.target.value))}
+          >
+            {[3, 5, 7, 10].map((score) => (
+              <option key={score} value={score}>
+                {score} Points
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       {/* Start Game Button */}
       <button

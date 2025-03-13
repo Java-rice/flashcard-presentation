@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Trophy, Flag, User } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Trophy, XCircle, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Flashcard from "@src/components/Flashcard";
 import PlayerSetup from "@src/components/PlayerSetup";
@@ -14,7 +14,14 @@ const Game = () => {
   const [showModal, setShowModal] = useState(true);
   const [winScore, setWinScore] = useState(5);
   const [activeQuestion, setActiveQuestion] = useState(null);
-  const [answeredQuestions, setAnsweredQuestions] = useState([]); // Track answered questions
+  const [answeredQuestions, setAnsweredQuestions] = useState([]);
+  const [showRankingModal, setShowRankingModal] = useState(false);
+
+  useEffect(() => {
+    if (answeredQuestions.length === questions.length && gameStarted) {
+      setShowRankingModal(true);
+    }
+  }, [answeredQuestions, gameStarted]);
 
   const handleStart = (players, winScore) => {
     setPlayers(
@@ -30,22 +37,22 @@ const Game = () => {
     setWinner(null);
     setShowModal(false);
     setActiveQuestion(null);
-    setAnsweredQuestions([]); // Reset answered questions
+    setAnsweredQuestions([]);
   };
 
   const handleSelectPlayer = (index) => {
-    if (players[index].wrong === 1) return; // Prevent selecting a player with wrong = 1
+    if (players[index].wrong === 1) return;
     setCurrentPlayerIndex(index);
   };
 
   const handleSelectQuestion = (questionIndex) => {
     if (activeQuestion !== null || answeredQuestions.includes(questionIndex))
-      return; // Prevent selection
+      return;
 
     setPlayers((prevPlayers) =>
       prevPlayers.map((player) => ({
         ...player,
-        wrong: 0, // Reset wrong count
+        wrong: 0,
       }))
     );
 
@@ -58,9 +65,13 @@ const Game = () => {
     setPlayers((prevPlayers) =>
       prevPlayers.map((player, index) => {
         if (index === currentPlayerIndex && isCorrect) {
+          const newScore = player.score + 1;
+          if (newScore >= winScore) {
+            setWinner(player.name);
+          }
           return {
             ...player,
-            score: player.score + 1,
+            score: newScore,
             position: player.position + 1,
             wrong: 0,
           };
@@ -166,7 +177,7 @@ const Game = () => {
                         key={index}
                         className={`p-4 rounded-lg shadow transition ${
                           isAnswered
-                            ? "bg-gray-400 text-white cursor-default" // Style for answered questions
+                            ? "bg-[#7e635f] text-white cursor-default"
                             : "bg-[#D7CCC8] dark:bg-[#4E342E] cursor-pointer hover:shadow-lg"
                         }`}
                         whileHover={isAnswered ? {} : { scale: 1.02 }}
@@ -176,14 +187,14 @@ const Game = () => {
                         <h3 className="font-semibold text-center truncate">
                           Question {index + 1}
                         </h3>
-                        <div className="text-center mt-2 text-sm">
+                        <div className="flex justify-center align-middle mx-auto text-center mt-2 text-sm">
                           {isAnswered ? (
-                            <span className="text-green-500 font-bold">
-                              Answered ✅
-                            </span>
-                          ) : question.video ? (
-                            <span className="flex items-center justify-center">
-                              <User size={16} className="mr-1" /> Video Question
+                            <span className="text-green-500 font-bold flex items-center gap-1">
+                              <CheckCircle
+                                size={20}
+                                className="text-green-500"
+                              />
+                              Answered
                             </span>
                           ) : (
                             "Click to select"
@@ -198,19 +209,95 @@ const Game = () => {
           </div>
         )}
 
-        <AnimatePresence>
-          {winner && (
+        {/* Ranking Modal */}
+        {showRankingModal &&
+          (() => {
+            // Sort players by score in descending order
+            const sortedPlayers = [...players].sort(
+              (a, b) => b.score - a.score
+            );
+            const winner =
+              sortedPlayers.length > 0 ? sortedPlayers[0].name : "No Winner";
+
+            return (
+              <div className="fixed inset-0 flex items-center justify-center bg-[#3E2723] bg-opacity-80 z-50">
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  className="bg-[#6D4C41] dark:bg-[#4E342E] p-6 rounded-lg shadow-lg text-center text-[#EFEBE9] border-4 border-[#D7CCC8]"
+                >
+                  <h2 className="text-2xl font-bold text-[#FFCC80]">
+                    🎉 Congratulations! 🎉
+                  </h2>
+                  <h1 className="text-4xl font-extrabold text-[#FFEB3B] mt-2">
+                    {winner}
+                  </h1>
+                  <h3 className="text-lg font-semibold text-[#FFCC80]">
+                    is the Champion! 🏆
+                  </h3>
+                  <h2 className="text-2xl font-bold text-[#FFCC80] mt-8">
+                    🏅 Final Rankings 🏅
+                  </h2>
+                  <ol className="mt-4 text-lg text-[#FFEB3B] font-semibold">
+                    {sortedPlayers.map((player, index) => (
+                      <li
+                        key={player.name}
+                        className={`my-1 ${
+                          index === 0 ? "text-[#FFD700] font-extrabold" : ""
+                        }`}
+                      >
+                        {index + 1}. {player.name} - {player.score} points
+                      </li>
+                    ))}
+                  </ol>
+                  <button
+                    onClick={() => window.location.reload()}
+                    className="mt-4 bg-[#795548] text-[#EFEBE9] px-4 py-2 rounded-lg border border-[#A1887F] hover:bg-[#5D4037] transition"
+                  >
+                    Back to Main Menu
+                  </button>
+                </motion.div>
+              </div>
+            );
+          })()}
+
+        {/* Winner Modal */}
+        {winner && (
+          <div className="fixed inset-0 flex items-center justify-center bg-[#3E2723] bg-opacity-80 z-50">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="fixed top-10 inset-x-0 mx-auto w-max bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2"
+              className="bg-[#6D4C41] dark:bg-[#4E342E] p-6 rounded-lg shadow-lg text-center text-[#EFEBE9] border-4 border-[#D7CCC8]"
             >
-              <Trophy size={24} />
-              <span className="text-xl font-bold">🎉 {winner} wins!</span>
+              <Trophy size={50} className="text-[#FFD54F] mx-auto mb-4" />
+              <h2 className="text-2xl font-bold text-[#FFCC80]">
+                🎉 Congratulations! 🎉
+              </h2>
+              <h1 className="text-4xl font-extrabold text-[#FFEB3B] mt-2">
+                {winner}
+              </h1>
+              <h3 className="text-lg font-semibold text-[#FFCC80]">
+                is the Champion! 🏆
+              </h3>
+              <div className="mt-4 flex justify-center gap-4">
+                <button
+                  onClick={() => window.location.reload()}
+                  className="bg-[#795548] text-[#EFEBE9] px-4 py-2 rounded-lg border border-[#A1887F] hover:bg-[#5D4037] transition"
+                >
+                  Back to Main Menu
+                </button>
+                <button
+                  onClick={() => setWinner(null)}
+                  className="bg-[#A1887F] text-[#4E342E] px-4 py-2 rounded-lg border border-[#6D4C41] hover:bg-[#D7CCC8] transition"
+                >
+                  View All Questions
+                </button>
+              </div>
             </motion.div>
-          )}
-        </AnimatePresence>
+          </div>
+        )}
       </div>
     </motion.div>
   );
