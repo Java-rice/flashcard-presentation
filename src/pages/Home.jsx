@@ -23,7 +23,7 @@ const Home = () => {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl font-bold mb-6"
+          className="text-5xl font-bold text-center mb-6"
         >
           UNDERSTANDING PROFESSIONAL ETHICS
         </motion.h1>

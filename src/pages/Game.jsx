@@ -126,14 +126,22 @@ const Game = () => {
       ></div>
 
       <div className="relative z-10 flex flex-col items-center w-full">
+        
         <motion.h1
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl text-center font-bold mb-6"
+          className="text-5xl py-10 text-center font-bold mb-6"
         >
           Games of Ethics
         </motion.h1>
+
+        <button
+          onClick={() => navigate("/")}
+          className="bg-[#795548] cursor-pointer absolute top-0 left-0 text-[#EFEBE9] px-4 py-2 rounded-lg border border-[#A1887F] hover:bg-[#5D4037] transition"
+        >
+          Back to Main Menu
+        </button>
 
         {!gameStarted ? (
           <AnimatePresence>
