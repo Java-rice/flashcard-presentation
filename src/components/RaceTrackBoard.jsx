@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CircleUser, Flag } from "lucide-react";
+import { CircleUser, User, Flag } from "lucide-react";
 
 // Function to get distinct colors for players
 const getPlayerColor = (index) => {
@@ -36,17 +36,28 @@ const RaceTrackBoard = ({
           {players.map((player, index) => (
             <motion.button
               key={index}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 font-semibold shadow-md ${
-                index === currentPlayerIndex
-                  ? "bg-[#5D4037] text-[#F5E1C0] dark:bg-[#F5E1C0] dark:text-[#5D4037] font-bold ring-2 ring-[#F5E1C0] dark:ring-[#5D4037]"
-                  : "bg-[#D7CCC8] text-[#3E2723] hover:bg-[#BCAAA4] dark:bg-[#4E342E] dark:text-gray-200 dark:hover:bg-[#6D4C41]"
-              }`}
-              onClick={() => onSelectPlayer(index)}
+              className={`flex items-center gap-3 p-3 rounded-md transition font-semibold 
+      ${player.wrong ? "bg-red-500 text-white shadow-lg" : ""}
+      ${
+        !player.wrong
+          ? index === currentPlayerIndex
+            ? "bg-[#5D4037] text-[#F5E1C0] dark:bg-[#F5E1C0] dark:text-[#5D4037] font-bold shadow-lg"
+            : "bg-[#D7CCC8] text-[#3E2723] hover:bg-[#BCAAA4]"
+          : ""
+      }
+    `}
+              onClick={() => {
+                if (!player.wrong) {
+                  // Prevents clicking only if player is wrong
+                  onSelectPlayer(index);
+                }
+              }}
             >
-              <circle-user size={22} className="opacity-80" />
-              <span className="text-lg">{player.name}</span>
+              <User
+                size={20}
+                className={`${player.wrong ? "text-white" : "opacity-80"}`}
+              />
+              <span>{player.name}</span>
               <span className="ml-auto font-bold">{player.score} pts</span>
             </motion.button>
           ))}

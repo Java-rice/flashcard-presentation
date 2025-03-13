@@ -16,7 +16,6 @@ const Flashcard = ({
   const [remainingChoices, setRemainingChoices] = useState(question.choices);
 
   const handleFlip = () => setFlipped(true);
-
   const handleAnswerClick = (choice) => {
     if (selectedAnswer) return;
 
@@ -29,16 +28,11 @@ const Flashcard = ({
       if (correct) {
         onCorrectAnswer(true);
       } else {
+        onWrongAnswer(true);
+        setIsCorrect(null);
+        setShowResult(false);
+        setSelectedAnswer(null);
         setRemainingChoices((prev) => prev.filter((c) => c !== choice));
-
-        // If there are no more choices left, trigger wrong answer callback
-        if (remainingChoices.length - 1 === 0) {
-          onWrongAnswer(true);
-        } else {
-          // Reset for another attempt
-          setSelectedAnswer(null);
-          setShowResult(false);
-        }
       }
     }, 1500);
   };
@@ -47,7 +41,10 @@ const Flashcard = ({
     <div className="w-full">
       <div className="mb-4 flex justify-between items-center">
         <div className="text-lg font-bold">
-          Player: <span className="text-white font-bold text-3xl">{currentPlayer.name}</span>
+          Player:{" "}
+          <span className="text-white font-bold text-3xl">
+            {currentPlayer.name}
+          </span>
         </div>
         <button
           onClick={onReset}
@@ -84,10 +81,12 @@ const Flashcard = ({
             {question.question}
           </h3>
 
-          {question.subquestion && <p className="text-center my-4">{question.subquestion}</p>}
+          {question.subquestion && (
+            <p className="text-center my-4">{question.subquestion}</p>
+          )}
 
           <ul className="space-y-3">
-            {question.choices.map((choice, index) => (
+            {remainingChoices.map((choice, index) => (
               <motion.li
                 key={index}
                 className={`p-3 rounded-md text-center cursor-pointer transition ${
